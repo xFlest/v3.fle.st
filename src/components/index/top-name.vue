@@ -1,0 +1,26 @@
+<template lang="pug">
+.name-conteiner
+  p.screenname xflest
+  p.name ふれすと
+</template>
+
+<style lang="scss">
+.name {
+  font-family: 'Sawarabi Gothic', sans-serif;
+  text-align: center;
+  font-size: min(3rem, 9vmin);
+  color: $black;
+  margin-top: max(-10rem, -30vmin);
+  position: relative;
+  font-weight: bold;
+  letter-spacing: min(.3rem, .9vmin);
+}
+.screenname {
+  font-family: 'League Script';
+  color: rgba($yellow, 70%);
+  text-align: center;
+  font-weight: bold;
+  font-size: min(4rem, 12vmin);
+  transform: translateX(min(4rem, 12vmin));
+}
+</style>
