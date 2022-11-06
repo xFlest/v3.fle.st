@@ -1,6 +1,6 @@
 export default {
   ssr: false,
-  target: 'static',
+  target: 'static',
 
   head: {
     title: 'fle.st',
