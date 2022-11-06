@@ -31,8 +31,7 @@ export default {
   buildModules: [
     '@nuxtjs/google-fonts',
     '@nuxtjs/style-resources',
-    '@nuxtjs/fontawesome',
-    '@nuxt/typescript-build',
+    '@nuxtjs/fontawesome'
   ],
 
   modules: [
