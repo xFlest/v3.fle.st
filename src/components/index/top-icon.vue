@@ -1,14 +1,14 @@
 <template lang="pug">
-.top-name
+.top-icon
   .fluid
   .avatar-container
     img(src='/avatar/avatar1.png')
 </template>
 
 <style lang="scss">
-.top-name {
-  width: 50%;
-  margin: 15% 25%;
+.top-icon {
+  width: 40vh;
+  margin: 10vh 25%;
   aspect-ratio: 1;
   position: relative;
   > .avatar-container {
@@ -22,6 +22,7 @@
     > img {
       width: 100%;
       height: 100%;
+      user-select: none;
     }
   }
   > .fluid {

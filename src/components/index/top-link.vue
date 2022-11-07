@@ -46,12 +46,14 @@ export default {
 
 <style lang="scss">
 .top-link {
+  height: 30vh;
   list-style: none;
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: min(2rem, 6vmin);
   padding: 0;
-  margin: min(15rem, 45vmin) 0;
+  margin: 0;
   > li {
     width: min(5rem, 15vmin);
     height: min(5rem, 15vmin);
@@ -148,19 +150,16 @@ export default {
         }
         line-height: min(5rem, 15vmin);
         text-align: center;
-        font-family: 'Sawarabi Gothic', sans-serif;
+        font-family: 'Outfit', 'Sawarabi Gothic', sans-serif;
         font-weight: bold;
         font-size: min(1.2rem, 3.6vmin);
         opacity: 0;
+        user-select: none;
         transform: translateY(-100%);
         transition: {
           property: transform, opacity;
           duration: 0s, .3s;
           delay: .3s, 0s;
-        }
-        &::selection {
-          background-color: #0000;
-          color: unset;
         }
       }
       &::before,

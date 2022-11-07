@@ -46,12 +46,16 @@ export default {
   googleFonts: {
     families: {
       'Sawarabi Gothic': true,
-      'League Script': true
+      'League Script': true,
+      'Outfit': true
     },
   },
 
   styleResources: {
-    scss: ['~/assets/style/_variables.scss']
+    scss: [
+      '~/assets/style/_variables.scss',
+      '~/assets/style/_fuck-webkit-highlight.scss'
+    ]
   },
   
   fontawesome: {

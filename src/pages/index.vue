@@ -1,5 +1,5 @@
 <template lang="pug">
-div.top
+.top
   top-icon
   top-name
   top-link
@@ -23,4 +23,8 @@ export default {
 </script>
 
 <style lang="scss">
+.top {
+  height: 100vh;
+  overflow: hidden;
+}
 </style>

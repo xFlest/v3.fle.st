@@ -1,10 +1,13 @@
 <template lang="pug">
-.name-conteiner
+.top-name
   p.screenname xflest
   p.name ふれすと
 </template>
 
 <style lang="scss">
+.top-name {
+  height: 10vh;
+}
 .name {
   font-family: 'Sawarabi Gothic', sans-serif;
   text-align: center;
@@ -14,6 +17,7 @@
   position: relative;
   font-weight: bold;
   letter-spacing: min(.3rem, .9vmin);
+  user-select: none;
 }
 .screenname {
   font-family: 'League Script';
@@ -22,5 +26,6 @@
   font-weight: bold;
   font-size: min(4rem, 12vmin);
   transform: translateX(min(4rem, 12vmin));
+  user-select: none;
 }
 </style>
