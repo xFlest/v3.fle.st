@@ -2,7 +2,7 @@
 ul.top-link
   li
     a.top-link-twitter(href="https://twitter.com/xflest")
-      .top-link-button
+      .top-link-button(v-if="$device.isDesktop")
         .top-link-button-bg
           p @xFlest
         .top-link-button-square
@@ -10,7 +10,7 @@ ul.top-link
         fa(:icon="['fab', 'twitter']")
   li
     a.top-link-discord(href="https://discord.com/users/559273656342151179")
-      .top-link-button
+      .top-link-button(v-if="$device.isDesktop")
         .top-link-button-bg
           p ふれすと#1351
         .top-link-button-square
@@ -18,7 +18,7 @@ ul.top-link
         fa(:icon="['fab', 'discord']")
   li
     a.top-link-github(href="https://github.com/xFlest")
-      .top-link-button
+      .top-link-button(v-if="$device.isDesktop")
         .top-link-button-bg
           p xFlest
         .top-link-button-square
@@ -26,7 +26,7 @@ ul.top-link
         fa(:icon="['fab', 'github']")
   li
     a.top-link-misskey(href="https://submarin.online/@f")
-      .top-link-button
+      .top-link-button(v-if="$device.isDesktop")
         .top-link-button-bg
            p @f@submarin.online
         .top-link-button-square
@@ -62,7 +62,9 @@ export default {
       width: 100%;
     }
     &:hover {
-      width: min(20rem, 60vmin);
+      .isDesktop & {
+        width: min(20rem, 60vmin);
+      }
       transition-delay: 0s;
       .top-link-button-bg {
         width: min(15rem, 45vmin);

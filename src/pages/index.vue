@@ -2,7 +2,7 @@
 div.top
   top-icon
   top-name
-  top-link(v-if="$device.isDesktop")
+  top-link
 </template>
 
 <script>

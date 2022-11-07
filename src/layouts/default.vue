@@ -1,13 +1,12 @@
 <template lang="pug">
 .content-container
-  main
+  main(v-bind:class="{'isDesktop': $device.isDesktop}")
     Nuxt
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-export default Vue.extend({
-})
+<script>
+export default {
+}
 </script>
 
 <style lang="scss">
