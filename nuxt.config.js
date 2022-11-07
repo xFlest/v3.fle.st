@@ -31,7 +31,8 @@ export default {
   buildModules: [
     '@nuxtjs/google-fonts',
     '@nuxtjs/style-resources',
-    '@nuxtjs/fontawesome'
+    '@nuxtjs/fontawesome',
+    '@nuxtjs/device',
   ],
 
   modules: [
