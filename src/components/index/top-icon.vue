@@ -7,8 +7,8 @@
 
 <style lang="scss">
 .top-icon {
-  width: 40vh;
-  margin: 10vh 25%;
+  width: 50%;
+  margin: 15% 25%;
   aspect-ratio: 1;
   position: relative;
   > .avatar-container {
@@ -43,6 +43,7 @@
     border-radius: 54% 46% 38% 62%/49% 70% 30% 51%;
   } 42% {
     border-radius: 61% 39% 55% 45%/61% 38% 62% 39%;
+    transform: rotate(-180deg);
   } 56% {
     border-radius: 61% 39% 67% 33%/70% 50% 50% 30%;
   } 70% {
