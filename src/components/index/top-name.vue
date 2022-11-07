@@ -1,7 +1,7 @@
 <template lang="pug">
 .top-name
   p.screenname xflest
-  p.name ふれすと
+  p.name #[span ふ]#[span れ]#[span す]#[span と]
 </template>
 
 <style lang="scss">
@@ -18,6 +18,13 @@
   font-weight: bold;
   letter-spacing: min(.3rem, .9vmin);
   user-select: none;
+  > span {
+    transition: transform .15s;
+    display: inline-block;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
 }
 .screenname {
   font-family: 'League Script';
