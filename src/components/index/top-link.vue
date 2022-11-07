@@ -46,7 +46,7 @@ export default {
 
 <style lang="scss">
 .top-link {
-  height: calc(90vh - min(56vh, 80vw));
+  height: calc((var(--vh, 100vw)*0.9) - min(var(--vh, 100vw)*056, 96vw));
   list-style: none;
   display: flex;
   justify-content: center;

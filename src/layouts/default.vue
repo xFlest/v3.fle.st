@@ -6,6 +6,16 @@
 
 <script>
 export default {
+  mounted() {
+    window.addEventListener('resize', this.setHeight)
+    this.setHeight()
+  },
+  methods: {
+    setHeight() {
+      const vh = window.innerHeight
+      document.documentElement.style.setProperty('--vh', `${vh}px`)
+    }
+  }
 }
 </script>
 
@@ -17,9 +27,9 @@ export default {
   background-color: $white;
   overflow: hidden;
   width: 100vw;
-  height: 100vh;
+  height: var(--vh, 100vw);
   > main {
-    width: min(70vh, 100vw);
+    width: min(var(--vh, 100vw)*0.7, 120vw);
   }
 }
 </style>

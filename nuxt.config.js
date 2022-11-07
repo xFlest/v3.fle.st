@@ -19,7 +19,8 @@ export default {
   srcDir: 'src/',
 
   css: [
-    'normalize.css'
+    'normalize.css',
+    '~/assets/style/_fuck-webkit-highlight.scss'
   ],
 
   plugins: [
@@ -53,8 +54,7 @@ export default {
 
   styleResources: {
     scss: [
-      '~/assets/style/_variables.scss',
-      '~/assets/style/_fuck-webkit-highlight.scss'
+      '~/assets/style/_variables.scss'
     ]
   },
   
