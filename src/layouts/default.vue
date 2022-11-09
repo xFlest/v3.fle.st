@@ -1,11 +1,21 @@
 <template lang="pug">
-.content-container
-  main(v-bind:class="{'isDesktop': $device.isDesktop}")
-    Nuxt
+div
+  Menu
+  Header
+  .content-container
+    main(v-bind:class="{'isDesktop': $device.isDesktop}")
+      Nuxt
 </template>
 
 <script>
+import Header from '~/components/header.vue';
+import Menu from '~/components/menu.vue';
+
 export default {
+  components: {
+    Header,
+    Menu
+  },
   mounted() {
     window.addEventListener('resize', this.setHeight)
     this.setHeight()

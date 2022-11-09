@@ -40,6 +40,9 @@ export default {
 .top-icon {
   width: 50%;
   margin: 15% 25%;
+  main:not(.isDesktop) & {
+    margin-top: 25%;
+  }
   aspect-ratio: 1;
   position: relative;
   > .avatar-container {
@@ -96,6 +99,7 @@ export default {
         transform-origin: 100% 50%;
         position: relative;
         overflow: hidden;
+        border-radius: min(.5rem, 1.5vmin);
         > .line {
           height: 100%;
           width: 100%;
