@@ -2,34 +2,34 @@
 ul.top-link
   li
     a.top-link-twitter(href="https://twitter.com/xflest")
-      .top-link-button(v-if="$device.isDesktop")
+      .top-link-button
         .top-link-button-bg
-          p @xFlest
-        .top-link-button-square
+          p(v-if="$device.isDesktop") @xFlest
+        .top-link-button-square(v-if="$device.isDesktop")
       .top-link-icon
         fa(:icon="['fab', 'twitter']")
   li
     a.top-link-discord(href="https://discord.com/users/559273656342151179")
-      .top-link-button(v-if="$device.isDesktop")
+      .top-link-button
         .top-link-button-bg
-          p ふれすと#1351
-        .top-link-button-square
+          p(v-if="$device.isDesktop") ふれすと#1351
+        .top-link-button-square(v-if="$device.isDesktop")
       .top-link-icon
         fa(:icon="['fab', 'discord']")
   li
     a.top-link-github(href="https://github.com/xFlest")
-      .top-link-button(v-if="$device.isDesktop")
+      .top-link-button
         .top-link-button-bg
-          p xFlest
-        .top-link-button-square
+          p(v-if="$device.isDesktop") xFlest
+        .top-link-button-square(v-if="$device.isDesktop")
       .top-link-icon 
         fa(:icon="['fab', 'github']")
   li
     a.top-link-misskey(href="https://submarin.online/@f")
-      .top-link-button(v-if="$device.isDesktop")
+      .top-link-button
         .top-link-button-bg
-           p @f@submarin.online
-        .top-link-button-square
+           p(v-if="$device.isDesktop") @f@submarin.online
+        .top-link-button-square(v-if="$device.isDesktop")
       .top-link-icon 
         icon-misskey
 </template>
@@ -64,65 +64,91 @@ export default {
       width: 100%;
     }
     &:hover {
-      .isDesktop & {
+      main.isDesktop & {
         width: min(20rem, 60vmin);
-      }
-      transition-delay: 0s;
-      .top-link-button-bg {
-        width: min(15rem, 45vmin);
         transition-delay: 0s;
-        > p {
-          transform: translateY(0);
-          opacity: 1;
-          transition: {
-            property: transform, opacity;
-            duration: .3s, .3s;
-            delay: .1s, 0s;
+        .top-link-button-bg {
+          width: min(15rem, 45vmin);
+          transition-delay: 0s;
+          > p {
+            transform: translateY(0);
+            opacity: 1;
+            transition: {
+              property: transform, opacity;
+              duration: .3s, .3s;
+              delay: .1s, 0s;
+            }
           }
         }
       }
     }
     &:active {
-      .top-link-button-bg {
-        &::before {
-          left: 100%;
+      main.isDesktop & {
+        .top-link-button-bg {
+          &::before {
+            left: 100%;
+          }
+          &::after {
+            right: 100%;
+          }
         }
-        &::after {
-          right: 100%;
+        .top-link-button-square {
+          transform: rotate(45deg) rotate3d(1, 1, 0, 180deg);
+        }
+        .top-link-icon {
+          border-color: $sky;
+          > svg {
+            transform: rotate(-45deg) rotateY(360deg);
+          }
         }
       }
-      .top-link-button-square {
-        transform: rotate(45deg) rotate3d(1, 1, 0, 180deg);
-      }
-      .top-link-icon {
-        border-color: $sky;
-        svg {
-          transform: rotate(-45deg) rotateY(360deg);
+      main:not(.isDesktop) & {
+        .top-link-icon {
+          background-position: 0 0;
+          > svg {
+            color: $white;
+          }
         }
       }
     }
   }
   &-icon {
-    height: calc(min(5rem,15vmin) / 1.414);
     aspect-ratio: 1;
-    transform: rotate(45deg);
     transition: border-color 1s;
-    background-color: $white;
     border: solid 1px $dark-yellow;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: calc(min(5rem, 15vmin) * .207 / 1.414);
-    margin-top: calc(min(5rem, 15vmin) * .207 / 1.414);
     position: relative;
     z-index: 2;
     color: $gray;
-    svg {
-      transform: rotate(-45deg);
+    > svg {
       height: min(2rem, 6vmin);
       vertical-align: middle;
-      transition: transform .6s ease-in;
+      transition: {
+        property: transform, color;
+        duration: .6s, .2s;
+        timing-function: ease-in
+      };
+    }
+    main.isDesktop & {
+      background-color: $white;
+      height: calc(min(5rem,15vmin) / 1.414);
+      transform: rotate(45deg);
+      margin-left: calc(min(5rem, 15vmin) * .207 / 1.414);
+      margin-top: calc(min(5rem, 15vmin) * .207 / 1.414);
+      > svg {
+        transform: rotate(-45deg);
+      }
+    }
+    main:not(.isDesktop) & {
+      height: min(5rem, 15vmin);
+      border-radius: 100%;
+      background-position: 100% 0;
+      background-size: 300% 100%;
+      background-image: linear-gradient(215deg, $white 0%, $white 50%, #0000 50%, #0000 100%);
+      transition: background-position .1s;
     }
   }
   &-button {
@@ -132,15 +158,43 @@ export default {
       display: inline-block;
       vertical-align: middle;
       height: min(5rem, 15vmin);
-      width: 0;
       position: relative;
       z-index: 1;
       transition: width .4s;
       transition-delay: .2s;
       overflow:  hidden;
-      margin: {
-        left: min(2.5rem, 7.5vmin);
-        right: max(-2.5rem, -7.5vmin);
+      main.isDesktop & {
+        width: 0;
+        margin: {
+          left: min(2.5rem, 7.5vmin);
+          right: max(-2.5rem, -7.5vmin);
+        }
+        &::before,
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          height: 1px;
+          width: min(1rem, 3vmin);
+          background-color: #fff;
+          transition: {
+            property: left, right;
+            duration: .3s;
+            timing-function: ease-in;
+          }
+        }
+        &::before {
+          top: 3px;
+          left: max(-1rem, -3vmin);
+        }
+        &::after {
+          bottom: 3px;
+          right: max(-1rem, -3vmin);
+        }
+      }
+      main:not(.isDesktop) & {
+        width: 100%;
+        border-radius: 100%;
       }
       > p {
         color: #fff;
@@ -161,28 +215,6 @@ export default {
           duration: 0s, .3s;
           delay: .3s, 0s;
         }
-      }
-      &::before,
-      &::after {
-        content: "";
-        display: block;
-        position: absolute;
-        height: 1px;
-        width: min(1rem, 3vmin);
-        background-color: #fff;
-        transition: {
-          property: left, right;
-          duration: .3s;
-          timing-function: ease-in;
-        }
-      }
-      &::before {
-        top: 3px;
-        left: max(-1rem, -3vmin);
-      }
-      &::after {
-        bottom: 3px;
-        right: max(-1rem, -3vmin);
       }
     }
     &-square {

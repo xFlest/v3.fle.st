@@ -25,6 +25,6 @@ export default {
 <style lang="scss">
 .top {
   height: var(--vh, 100vw);
-  overflow: hidden;
+  overflow: visible;
 }
 </style>
