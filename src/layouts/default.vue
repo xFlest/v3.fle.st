@@ -1,5 +1,5 @@
 <template lang="pug">
-div
+div._
   Menu
   Header
   .content-container
