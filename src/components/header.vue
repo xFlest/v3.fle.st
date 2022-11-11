@@ -36,6 +36,7 @@ header {
     border: 0;
     background-color: unset;
     transition: transform .2s .3s ease-out;
+    cursor: pointer;
     > div {
       width: 100%;
       height: 100%;
@@ -46,7 +47,12 @@ header {
       align-items: center;
       transition: transform .15s ease;
       > .menu-dot {
-        background-color: $black;
+        :where(.light-mode) & {
+          background-color: $gray;
+        }
+        :where(.dark-mode) & {
+          background-color: $yellow;
+        }
         width: 100%;
         height: 100%;
         border-radius: min(.3rem, .9vmin);

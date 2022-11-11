@@ -33,6 +33,7 @@ export default {
     '@nuxtjs/google-fonts',
     '@nuxtjs/style-resources',
     '@nuxtjs/fontawesome',
+    '@nuxtjs/color-mode',
     '@nuxtjs/device',
   ],
 
@@ -64,16 +65,7 @@ export default {
       {
         set: "@fortawesome/free-solid-svg-icons",
         icons: [
-          "faHouse",
-          "faCircleUser",
-          "faUser",
-          "faAward",
-          "faNewspaper",
-          "faImages",
-          "faEarthAmericas",
-          "faAngleRight",
-          "faSackDollar",
-          "faDownload"
+          "faLightbulb",
         ],
       },
       {

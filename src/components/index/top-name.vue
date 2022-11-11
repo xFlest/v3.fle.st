@@ -12,7 +12,12 @@
   font-family: 'Sawarabi Gothic', sans-serif;
   text-align: center;
   font-size: min(3rem, 9vmin);
-  color: $black;
+  .light-mode & {
+    color: $black;
+  }
+  .dark-mode & {
+    color: $white;
+  }
   margin-top: max(-10rem, -30vmin);
   position: relative;
   font-weight: bold;

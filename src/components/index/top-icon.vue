@@ -78,7 +78,7 @@ export default {
     animation: fluid 15s ease 0s infinite;
     width: 100%;
     height: 100%;
-    opacity: .4;
+    opacity: .6;
   }
   .anm-line {
     position: absolute;

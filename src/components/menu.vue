@@ -25,6 +25,16 @@
         NuxtLink(to='/link').menu-link
           p.menu-title リンク
           p.menu-text link
+      li.menu-nav-item(@click='toggleMenu')
+        NuxtLink(to='/gyagu').menu-link
+          p.menu-title ギャグ
+          p.menu-text gyagu
+    .menu-control
+      .control-colormode(@click="toggleColorMode")
+        fa(:icon="['fas', 'lightbulb']")
+        .darkmode-line
+          .darkmode-line-white
+          .darkmode-line-black
 </template>
 
 <script>
@@ -33,6 +43,13 @@ export default {
     toggleMenu() {
       const menu = document.getElementsByClassName('menu')[0]
       menu.classList.toggle('isOpen')
+    },
+    toggleColorMode() {
+      if (this.$colorMode.preference != 'light') {
+        this.$colorMode.preference = 'light'
+      } else {
+        this.$colorMode.preference = 'dark'
+      }
     }
   }
 }
@@ -122,8 +139,14 @@ export default {
     left: 100%;
     transition: left .6s ease;
     z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 100%;
-    padding: min(9rem, 27vmin);
+    height: var(--vh, 100vh);
+    padding: min(6rem, 18vmin) {
+      top: min(9rem, 27vmin)
+    }
     box-sizing: border-box;
     .isOpen & {
       left: 0;
@@ -146,7 +169,10 @@ export default {
         display: block;
         width: 100%;
         text-decoration: none;
-        margin-bottom: min(2rem, 3vmin);
+        margin: {
+          bottom: min(2rem, 3vmin);
+          left: min(3rem, 9rem);
+        }
         .menu-title {
           font-family: 'Sawarabi Gothic', sans-serif;
           font-size: min(3rem, 4.5vmin);
@@ -172,6 +198,66 @@ export default {
           }
           position: relative;
           z-index: 6;
+        }
+      }
+    }
+    > .menu-control {
+      height: min(4rem, 6vmin);
+      margin: min(2rem, 3vmin);
+      opacity: 0;
+      transition: opacity .3s 0s;
+      > div {
+        height: 100%;
+        aspect-ratio: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+        > svg {
+          height: 100%;
+          color: $white;
+        }
+        > .darkmode-line {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: min(.8rem, 2.4vmin);
+          margin-top: max(-.4rem, -1.2vmin);
+          transform: rotate(45deg);
+          transform-origin: 0;
+          transition: width .3s ease;
+          > div {
+            width: 100%;
+            height: 50%;
+            border-radius: min(.2rem, .6vmin);
+          }
+          > .darkmode-line-white {
+            background-color: $white;
+          }
+          > .darkmode-line-black {
+            background-color: #143e7e;
+          }
+        }
+        .light-mode & {
+          > .darkmode-line {
+            width: 0;
+          }
+          &.control-colormode:active {
+            > .darkmode-line {
+              width: 141%;
+            }
+          }
+        }
+        .dark-mode & {
+          > .darkmode-line {
+            width: 141%;
+          }
+          &.control-colormode:active {
+            > .darkmode-line {
+              width: 0;
+            }
+          }
         }
       }
     }
@@ -206,11 +292,15 @@ export default {
         duration: .5s;
         timing-function: ease-out;
       }
-      @for $child from 0 through 4 {
+      @for $child from 1 through 5 {
         &:nth-child(#{$child}) {
           transition-delay: ($child * .2s + .6s);
         }
       }
+    }
+    .menu-control {
+      opacity: 1;
+      transition: opacity .5s 2s;
     }
   }
 }

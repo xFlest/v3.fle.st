@@ -1,5 +1,5 @@
 <template lang="pug">
-div._
+._
   Menu
   Header
   .content-container
@@ -34,12 +34,17 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: $white;
   overflow: hidden;
   width: 100vw;
   height: var(--vh, 100vw);
   > main {
     width: min(var(--vh, 100vw)*0.7, 120vw);
+  }
+  .light-mode & {
+    background-color: $white;
+  }
+  .dark-mode & {
+    background-color: $black;
   }
 }
 </style>

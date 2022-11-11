@@ -17,6 +17,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.2.0",
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@nuxt/content": "^1.15.1",
+    "@nuxtjs/color-mode": "2.1.1",
     "@nuxtjs/device": "^2.1.0",
     "@nuxtjs/fontawesome": "^1.1.2",
     "@nuxtjs/style-resources": "^1.2.1",

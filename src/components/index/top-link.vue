@@ -125,7 +125,12 @@ export default {
     align-items: center;
     position: relative;
     z-index: 2;
-    color: $gray;
+    .light-mode & {
+      color: $gray;
+    }
+    .dark-mode & {
+      color: $white;
+    }
     > svg {
       height: min(2rem, 6vmin);
       vertical-align: middle;
@@ -136,7 +141,12 @@ export default {
       };
     }
     main.isDesktop & {
-      background-color: $white;
+      .light-mode & {
+        background-color: $white;
+      }
+      .dark-mode & {
+        background-color: $black;
+      }
       height: calc(min(5rem,15vmin) / 1.414);
       transform: rotate(45deg);
       margin-left: calc(min(5rem, 15vmin) * .207 / 1.414);
@@ -150,7 +160,12 @@ export default {
       border-radius: 100%;
       background-position: 100% 0;
       background-size: 300% 100%;
-      background-image: linear-gradient(215deg, $white 0%, $white 50%, #0000 50%, #0000 100%);
+      .light-mode & {
+        background-image: linear-gradient(215deg, $white 0%, $white 50%, #0000 50%, #0000 100%);
+      }
+      .dark-mode & {
+        background-image: linear-gradient(215deg, $black 0%, $black 50%, #0000 50%, #0000 100%);
+      }
       transition: background-position .1s;
     }
   }
