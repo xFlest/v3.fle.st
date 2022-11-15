@@ -35,7 +35,7 @@ ul.top-link
 </template>
 
 <script>
-import IconMisskey from '~/components/icon/icon-misskey.vue';
+import IconMisskey from '~/components/svg/icon-misskey.vue';
 
 export default {
   components: {

@@ -1,28 +1,32 @@
 <template lang="pug">
-.top
-  top-icon
-  top-name
-  top-link
+div
+  Top
+  Dot.dot-space
+  About
+  Triflest
 </template>
 
 <script>
-import TopIcon from '~/components/index/top-icon.vue';
-import TopName from '~/components/index/top-name.vue';
-import TopLink from '~/components/index/top-link.vue';
+import Top from '~/components/index/top/top.vue';
+import Dot from '~/components/svg/dot.vue';
+import About from '~/components/index/about/about.vue';
+import Triflest from '~/components/svg/triflest.vue';
 
 export default {
   components: {
-    TopIcon,
-    TopName,
-    TopLink
+    Top,
+    Dot,
+    About,
+    Triflest
 },
   layout: 'default',
 }
 </script>
 
 <style lang="scss">
-.top {
-  height: var(--vh, 100vw);
-  overflow: visible;
+.dot-space {
+  width: min(20rem, 60vmin);
+  display: block;
+  margin: min(5rem, 15vmin) auto;
 }
 </style>

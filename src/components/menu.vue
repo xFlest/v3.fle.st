@@ -68,7 +68,7 @@ export default {
   &-background {
     width: 100%;
     height: var(--vh, 100vh);
-    padding: min(3rem, 9vmin);
+    padding: min(3rem, 4.5vmin);
     box-sizing: border-box;
     position: absolute;
     left: 100%;
@@ -144,9 +144,7 @@ export default {
     justify-content: space-between;
     width: 100%;
     height: var(--vh, 100vh);
-    padding: min(6rem, 18vmin) {
-      top: min(9rem, 27vmin)
-    }
+    padding: min(9rem, 13.5vmin);
     box-sizing: border-box;
     .isOpen & {
       left: 0;
@@ -171,7 +169,6 @@ export default {
         text-decoration: none;
         margin: {
           bottom: min(2rem, 3vmin);
-          left: min(3rem, 9rem);
         }
         .menu-title {
           font-family: 'Sawarabi Gothic', sans-serif;
@@ -189,7 +186,7 @@ export default {
           font-family: 'League Script';
           color: rgba($yellow, .8);
           font-weight: bold;
-          font-size: min(4rem, 8vmin);
+          font-size: min(4rem, 6vmin);
           transform: translateX(min(4rem, 6vmin));
           user-select: none;
           margin: 0 {
@@ -203,7 +200,6 @@ export default {
     }
     > .menu-control {
       height: min(4rem, 6vmin);
-      margin: min(2rem, 3vmin);
       opacity: 0;
       transition: opacity .3s 0s;
       > div {
@@ -222,15 +218,15 @@ export default {
           position: absolute;
           top: 0;
           left: 0;
-          height: min(.8rem, 2.4vmin);
-          margin-top: max(-.4rem, -1.2vmin);
+          height: min(.8rem, 1.2vmin);
+          margin-top: max(-.4rem, -.6vmin);
           transform: rotate(45deg);
           transform-origin: 0;
           transition: width .3s ease;
           > div {
             width: 100%;
             height: 50%;
-            border-radius: min(.2rem, .6vmin);
+            border-radius: min(.2rem, .3vmin);
           }
           > .darkmode-line-white {
             background-color: $white;

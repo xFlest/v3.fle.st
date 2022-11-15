@@ -34,7 +34,8 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
   width: 100vw;
   height: var(--vh, 100vw);
   > main {
