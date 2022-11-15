@@ -127,7 +127,7 @@ export default {
     > .border-top {
       position: absolute;
       top: 0;
-      right: min(4rem, 12vmin);
+      right: min(4rem, 6vmin);
       width: 0;
       height: 2px;
       background-color: $white;
@@ -264,7 +264,7 @@ export default {
     .menu-border {
       opacity: 1;
       > .border-right {
-        height: calc(100% - min(4rem, 12vmin));
+        height: calc(100% - min(4rem, 6vmin));
         transition: height .1s .9s;
       }
       > .border-bottom {
@@ -276,7 +276,7 @@ export default {
         transition: height .1s .7s;
       }
       > .border-top {
-        width: calc(100% - min(4rem, 12vmin));
+        width: calc(100% - min(4rem, 6vmin));
         transition: width .1s .6s;
       }
     }

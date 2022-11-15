@@ -20,12 +20,12 @@ export default {
 
 <style lang="scss">
 header {
-  height: min(3rem, 9vmin);
-  width: calc(100% - min(4rem, 12vmin));
+  height: min(3rem, 4.5vmin);
+  width: calc(100% - min(4rem, 6vmin));
   position: fixed;
   top: 0;
   z-index: 5;
-  margin: min(2rem, 6vmin);
+  margin: min(2rem, 3vmin);
   > .menu-button {
     position: absolute;
     top: 0;
@@ -55,7 +55,7 @@ header {
         }
         width: 100%;
         height: 100%;
-        border-radius: min(.3rem, .9vmin);
+        border-radius: min(.3rem, .45vmin);
         opacity: 1;
         transition: {
           property: filter, opacity, width, transform, background-color;
