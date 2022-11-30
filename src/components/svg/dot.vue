@@ -1,7 +1,7 @@
 <template>
 <svg viewBox="0 0 200 100">
 	<defs>
-		<pattern width="19" height="19" patternUnits="userSpaceOnUse" id="dot">
+		<pattern width="19" height="18" patternUnits="userSpaceOnUse" id="dot">
 			<circle cx="3" cy="3" r="3" fill="currentColor"/>
 		</pattern>
 	</defs>
