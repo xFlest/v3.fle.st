@@ -1,30 +1,24 @@
 <template lang="pug">
-div
-  Top
-  Dot.dot-space
-  About
+.top
+  TopIcon
+  TopName
+  TopLink
 </template>
 
 <script>
-import Top from '~/components/index/top/top.vue';
-import Dot from '~/components/svg/dot.vue';
-import About from '~/components/index/about/about.vue';
+import TopIcon from '~/components/index/top/top-icon.vue';
+import TopName from '~/components/index/top/top-name.vue';
+import TopLink from '~/components/index/top/top-link.vue';
 
 export default {
   components: {
-    Top,
-    Dot,
-    About,
-},
-  layout: 'default',
+    TopIcon,
+    TopName,
+    TopLink
+  },
+  layout: 'default'
 }
 </script>
 
 <style lang="scss">
-.dot-space {
-  width: min(20rem, 60vmin);
-  display: block;
-  margin: min(5rem, 15vmin) auto;
-  overflow: visible;
-}
 </style>

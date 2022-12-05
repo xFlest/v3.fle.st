@@ -1,5 +1,5 @@
 <template lang="pug">
-header
+header.header
   .nya
   button.menu-button(@click='toggleMenu')
     div
@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style lang="scss">
-header {
+.header {
   height: min(3rem, 4.5vmin);
   width: calc(100% - min(4rem, 6vmin));
   position: fixed;
