@@ -2,6 +2,7 @@
 .blog-layout
   aside(v-if="windowAspect > 1.2")
     BlogTitle
+    BlogNav
   BlogTitle(v-else)
   main
     p content
@@ -10,12 +11,13 @@
 </template>
 
 <script>
-
 import BlogTitle from '~/components/blog/blog-title.vue';
+import BlogNav from '~/components/blog/blog-nav.vue';
 
 export default {
   components: {
-    BlogTitle
+    BlogTitle,
+    BlogNav
   },
   data() {
       return {
