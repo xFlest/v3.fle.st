@@ -1,12 +1,8 @@
 <template lang="pug">
 .blog-layout
   aside(v-if="windowAspect > 1.2")
-    header.blog-title
-      figure.avatar
-        img(src='/avatar/avatar1.png' alt='icon_xFlest')
-      h1.blog-title-text ふれすとの#[wbr]ノート。
-        p xFlest's #[wbr]Note
-  header(v-else)
+    BlogTitle
+  BlogTitle(v-else)
   main
     p content
   aside(v-if="windowAspect > 1.2")
@@ -14,20 +10,26 @@
 </template>
 
 <script>
+
+import BlogTitle from '~/components/blog/blog-title.vue';
+
 export default {
-    data() {
-        return {
-            windowAspect: ""
-        };
-    },
-    mounted() {
-        const resizeWindow = () => {
-            const width = window.innerWidth;
-            const height = window.innerHeight;
-            this.windowAspect = width / height;
-        };
-        window.addEventListener("resize", resizeWindow);
-        resizeWindow();
+  components: {
+    BlogTitle
+  },
+  data() {
+      return {
+          windowAspect: ""
+      };
+  },
+  mounted() {
+      const resizeWindow = () => {
+          const width = window.innerWidth;
+          const height = window.innerHeight;
+          this.windowAspect = width / height;
+      };
+      window.addEventListener("resize", resizeWindow);
+      resizeWindow();
     },
 }
 </script>
@@ -46,9 +48,17 @@ export default {
     min-height: 180vh;
   }
   > header {
-    + main {
-      width: 94vw
+    width: 92vw;
+    margin: 0 4vw;
+    > figure {
+      width: 25%;
     }
+    + main {
+      width: 92vw
+    }
+  }
+  &:has(> header) {
+    flex-direction: column;
   }
   > aside {
     width: 15vw;
@@ -59,35 +69,6 @@ export default {
     }
     &:has(.blog-index) {
       margin-right: 4vmin;
-    }
-    > .blog-title {
-      width: 100%;
-      > figure {
-        margin: 0;
-        width: 50%;
-        aspect-ratio: 1;
-        border-radius: 100%;
-        box-shadow: 0 0 min(.8rem, 1.2vmin) rgba($black, .2);
-        overflow: hidden;
-        > img {
-          width: 100%;
-          display: block;
-        }
-      }
-      > h1 {
-        word-break: keep-all;
-        font-size: min(1.6rem, 2.4vmin);
-        margin: min(1.6rem, 2.4vmin) 0;
-        font-family: 'Sawarabi Gothic', sans-serif;
-        color: $black;
-        > p {
-          margin: min(.6rem, .9vmin) 0;
-          font-size: min(1.2rem, 1.8vmin);
-          opacity: .5;
-          font-family: 'Outfit', 'Sawarabi Gothic', sans-serif;
-          font-weight: lighter;
-        }
-      } 
     }
   }
 }
