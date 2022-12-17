@@ -66,6 +66,9 @@ export default {
         set: "@fortawesome/free-solid-svg-icons",
         icons: [
           "faLightbulb",
+          "faHouse",
+          "faUser",
+          "faNewspaper",
         ],
       },
       {
