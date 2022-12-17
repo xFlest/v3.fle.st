@@ -6,7 +6,7 @@ nav.blog-nav
         fa(:icon="['fas', 'newspaper']")
         span Top
     li.blog-nav-item
-      NuxtLink(to='/blog/about')
+      NuxtLink(to='/articles/about')
         fa(:icon="['fas', 'user']")
         span About
     li.blog-nav-item

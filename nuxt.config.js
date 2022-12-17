@@ -41,7 +41,13 @@ export default {
     '@nuxt/content',
   ],
 
-  content: {},
+  content: {
+    markdown: {
+      prism: {
+        theme: 'github-markdown-css'
+      }
+    }
+  },
 
   build: {},
   

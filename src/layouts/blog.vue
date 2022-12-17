@@ -5,7 +5,7 @@
     BlogNav
   BlogTitle(v-else)
   main
-    p content
+    Nuxt
   aside(v-if="windowAspect > 1.2")
     p.blog-index # index
 </template>
