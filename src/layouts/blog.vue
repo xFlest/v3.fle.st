@@ -48,6 +48,7 @@ export default {
     margin: 0 4vmin;
     border-radius: min(2rem, 3vmin);
     min-height: calc(100vh - 8vmin);
+    overflow: hidden;
   }
   > header {
     width: 92vw;
