@@ -1,6 +1,5 @@
 <template lang="pug">
 article
-  h1 {{ page.title }}
   div.markdown-body
     nuxt-content(:document="page")
 </template>
@@ -14,3 +13,9 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.markdown-body {
+  padding: min(4rem, 6vmin)
+}
+</style>
