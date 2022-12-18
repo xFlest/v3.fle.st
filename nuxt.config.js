@@ -24,7 +24,8 @@ export default {
   ],
 
   plugins: [
-    '~/plugins/twemoji.js'
+    '~/plugins/twemoji.js',
+    '~/plugins/mfm.js'
   ],
 
   components: true,
