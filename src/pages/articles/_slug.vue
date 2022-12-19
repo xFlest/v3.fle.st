@@ -41,7 +41,7 @@ export default {
         {
           hid: 'og:image',
           name: 'og:image',
-          content: this.article.image
+          content: `/image/${slug}/${article.image}`
         },
         {
           hid: 'og:description',
