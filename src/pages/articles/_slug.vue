@@ -6,6 +6,9 @@ article.article
     ul.article-tag
       li(v-for="tag in article.tags" :key="tag") {{ tag }}
     h1 {{ article.title }}
+    .article-date
+      fa(:icon="['far', 'calendar']")
+      time(:datetime='article.createdAt') {{ $dateFns.format(new Date(article.createdAt), 'yyyy/MM/dd') }}
   div.markdown-body
     NuxtContent(:document="article")
 </template>
@@ -19,30 +22,84 @@ export default {
     return { 
       article,
       slug
-     }
+    }
   },
+  head() {
+    return {
+      title: this.article.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.article.description
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content: this.article.title
+        },
+        {
+          hid: 'og:image',
+          name: 'og:image',
+          content: this.article.image
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content: this.article.description
+        },
+        {
+          hid: 'twitter:card',
+          name: 'twitter:card',
+          content: this.article.description
+        },
+        {
+          hid: 'twitter:site',
+          name: 'twitter:site',
+          content: '@xflest'
+        },
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: this.article.title
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: this.article.description
+        },
+      ]
+
+    }
+  }
 }
 </script>
 
 <style lang="scss">
 .article {
   > .markdown-body {
-    padding: 0 min(4rem, 6vmin);
+    padding: 0 min(4rem, 6vmin) min(4rem, 6vmin);
     a {
       color: #FAD66D;
     }
+    img {
+      display: block;
+    }
   }
-  &-image {
+  .article-image {
     width: 100%;
     > img {
       width: 100%;
     }
   }
-  &-detail {
+  .article-detail {
     font-family: 'Outfit', -apple-system,BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
     padding: min(2rem, 3vmin) min(4rem, 6vmin);
     > h1 {
       font-size: 2.8rem;
+    }
+    time {
+      margin-left: .6em;
     }
   }
   &-tag {
@@ -54,7 +111,7 @@ export default {
       font-size: 1.2rem;
       line-height: 2rem;
       padding: 0 .4rem;
-      color: $white;
+      color: #fff;
       border-radius: .2rem;
       margin-right: .4rem;
     }

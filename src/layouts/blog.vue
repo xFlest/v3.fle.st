@@ -1,13 +1,12 @@
 <template lang="pug">
 .blog-layout
   aside(v-if="windowAspect > 1.2")
-    BlogTitle
-    BlogNav
+    div
+      BlogTitle
+      BlogNav
   BlogTitle(v-else)
   main
     Nuxt
-  aside(v-if="windowAspect > 1.2")
-    p.blog-index # index
 </template>
 
 <script>
@@ -67,6 +66,10 @@ export default {
     width: 15vw;
     background-color: $white;
     border-radius: min(2rem, 3vmin);
+    > div {
+      position: sticky;
+      top: 4vmin;
+    }
     &:has(.blog-title) {
       margin-left: 4vmin;
     }
