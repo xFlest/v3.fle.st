@@ -1,6 +1,8 @@
 ---
 title: Markdown Sample
 description: 'nyaaaa'
+imgage: 2.webp
+tags: [markdown, test]
 ---
 
 # h1 Heading 8-)

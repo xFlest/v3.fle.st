@@ -25,16 +25,17 @@ export default {
 
   plugins: [
     '~/plugins/twemoji.js',
-    '~/plugins/mfm.js'
+    '~/plugins/cjp.js',
   ],
 
   components: true,
 
   buildModules: [
-    '@nuxtjs/google-fonts',
     '@nuxtjs/style-resources',
+    '@nuxtjs/google-fonts',
     '@nuxtjs/fontawesome',
     '@nuxtjs/color-mode',
+    '@nuxtjs/date-fns',
     '@nuxtjs/device',
   ],
 
@@ -45,7 +46,7 @@ export default {
   content: {
     markdown: {
       prism: {
-        theme: 'github-markdown-css'
+        theme: '~/assets/style/github-markdown-light.css'
       }
     }
   },
