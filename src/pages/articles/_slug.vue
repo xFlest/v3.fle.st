@@ -51,7 +51,7 @@ export default {
         {
           hid: 'twitter:card',
           name: 'twitter:card',
-          content: this.article.description
+          content: summary
         },
         {
           hid: 'twitter:site',
